@@ -17,10 +17,11 @@ namespace CaseTecnicoMobile.Drivers
         public AndroidDriver<AppiumWebElement> InitializeAndroidDriverAppium()
         {
             var driverOptions = new AppiumOptions();
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "App\\appItauCorretora.apk");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "emulator");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "11.0");
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "C://Users//brend//Downloads//appItauCorretora.apk");            
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.App, path);            
 
             return new AndroidDriver<AppiumWebElement>(new Uri("http://127.0.0.1:4723/wd/hub"), driverOptions);
         }

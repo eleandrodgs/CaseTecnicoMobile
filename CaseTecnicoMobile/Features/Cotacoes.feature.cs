@@ -144,7 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("que quero visualizar as cotações", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 11
- testRunner.When("busco pela cotação valida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When("busco pela cotação IBOV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line hidden
 #line 12
  testRunner.And("apago a cotação inserida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
@@ -187,7 +187,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("que quero visualizar as cotações", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 17
- testRunner.When("busco por uma cotação inválida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When("busco pela cotação ABCD", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line hidden
 #line 18
  testRunner.Then("obtenho a mensagem de erro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
