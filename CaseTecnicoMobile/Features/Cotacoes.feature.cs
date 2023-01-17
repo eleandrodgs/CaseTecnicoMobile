@@ -107,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("acesso a tela de cotações", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line hidden
 #line 7
- testRunner.Then("visualizo as cotações", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+ testRunner.Then("visualizo a tela de cotações", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -144,7 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("que quero visualizar as cotações", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 11
- testRunner.When("busco por uma cotação valida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When("busco pela cotação valida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line hidden
 #line 12
  testRunner.And("apago a cotação inserida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");

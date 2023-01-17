@@ -12,9 +12,9 @@ namespace CaseTecnicoMobile.Drivers
     [Binding]
     public class AppiumDriver
     {
-        private AndroidDriver<AndroidElement> _androidDriver { get; set; }
+        private AndroidDriver<AppiumWebElement> _androidDriver { get; set; }
 
-        public AndroidDriver<AndroidElement> InitializeAndroidDriverAppium()
+        public AndroidDriver<AppiumWebElement> InitializeAndroidDriverAppium()
         {
             var driverOptions = new AppiumOptions();
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
@@ -22,7 +22,7 @@ namespace CaseTecnicoMobile.Drivers
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "11.0");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "C://Users//brend//Downloads//appItauCorretora.apk");            
 
-            return new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), driverOptions);
+            return new AndroidDriver<AppiumWebElement>(new Uri("http://127.0.0.1:4723/wd/hub"), driverOptions);
         }
 
         public void FinishAndroidDriverAppium()

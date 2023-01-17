@@ -1,6 +1,8 @@
-﻿using LivingDoc.Dtos;
+﻿using CaseTecnicoMobile.Drivers;
+using LivingDoc.Dtos;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -13,21 +15,36 @@ namespace CaseTecnicoMobile.Helpers
     [Binding]
     public class Utils
     {
-        //public AndroidDriver<AndroidElement> _androidDriver { get; set; }
-        //public AndroidElement _androidElement;
-        //public TimeSpan _time = TimeSpan.FromSeconds(5000);
+        public AndroidDriver<AppiumWebElement> _androidDriver { get; set; }
+        public AndroidElement _androidElement;
+        public WebDriverWait _waitDriver;
+        
+        public void WaitForElement(Func<bool> condition)
+        {
+            try
+            {
+                _waitDriver = new WebDriverWait(_androidDriver, TimeSpan.FromSeconds(10));
+                _waitDriver.Until(driver => EvaluateConditionWithoutThrowing(condition));
 
-        //public void WaitForElement(By element)
-        //{
-        //    try
-        //    {
-        //        new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(element));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw new Exception($"Wait For Element {element} Failed: {e.Message}");
-        //    }
-        //}
+            }
+            catch (WebDriverTimeoutException)
+            {
+                // Force same exception
+                condition();
+            }
+        }
+
+        private static bool EvaluateConditionWithoutThrowing(Func<bool> condition)
+        {
+            try
+            {
+                return condition();
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         //public Utils WaitClickable()
         //{
