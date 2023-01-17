@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 namespace CaseTecnicoMobile.Hooks
 {
     [Binding]
-    public sealed class InitilializeHook
+    public class InitilializeHook
     {       
-        private AppiumDriver _appiumDriver;
+        public AppiumDriver _appiumDriver;
 
         public InitilializeHook(AppiumDriver appiumDriver)
         {           
             _appiumDriver = appiumDriver;
         }
 
-        [BeforeTestRun]
+        [BeforeScenario]
         public void SetUpAndroidDriver()
         {
             _appiumDriver.InitializeAndroidDriverAppium();
         }
 
-        [AfterTestRun]
+        [AfterScenario]
         public void TearDownAndroid()
         {
             _appiumDriver.FinishAndroidDriverAppium();
