@@ -33,7 +33,7 @@ Appium Server
 
 1. Primeiramente, realize o clone do projeto.
 
-2. Para executar o projeto é necessário ter instalado o AndroidStudio e a dependência AVD Manager Android. 
+2. Para executar o projeto é necessário ter instalado o AndroidStudio e a dependência AVD Manager Android. Para configurar o ambiente de execução, siga os passos descritos nesse link: https://eliasnogueira.github.io/appium-workshop/
 
 3. Configure um dispositivo no AVD Manager Android com as características descritas no arquivo `Driver/AppiumDriver.cs`
 
